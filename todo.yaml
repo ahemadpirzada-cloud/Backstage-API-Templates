@@ -51,13 +51,6 @@ spec:
           responses:
             '200':
               description: Success
-      /books:
-        get:
-          tags:
-            - books
-          responses:
-            '200':
-              description: Success
       '/api/books/{id}':
         get:
           tags:
