@@ -1,48 +1,178 @@
+--- 
 apiVersion: backstage.io/v1alpha1
+definitions: 
+  InvalidResponse: 
+    properties: 
+      message: 
+        type: string
+      statusCode: 
+        type: string
+    type: object
+  Task: 
+    properties: 
+      assignee: 
+        type: string
+      status: 
+        type: string
+      task: 
+        type: string
+    type: object
+  todosResponse: 
+    properties: 
+      assignee: 
+        type: string
+      id: 
+        type: integer
+      status: 
+        type: string
+      task: 
+        type: string
+    type: object
 kind: API
-metadata:
+metadata: 
+  annotations: 
+    backstage.io/techdocs-ref: "dir:."
+  description: "The todos API"
+  links: 
+    - 
+      icon: github
+      title: "GitHub Repo"
+      url: "https://github.com/ahemadpirzada-cloud/Backstage-API-Templates"
+    - 
+      icon: code
+      title: "API Spec"
+      url: "https://github.com/ahemadpirzada-cloud/Backstage-API-Templates/blob/main/todo.yaml"
   name: poc-backstage-api
-  description: The todos API
-  tags:
+  tags: 
     - todo
     - dot-net-core-web-api
-  links:
-    - url: https://github.com/ahemadpirzada-cloud/Backstage-API-Templates
-      title: GitHub Repo
-      icon: github
-    - url: https://github.com/ahemadpirzada-cloud/Backstage-API-Templates/blob/main/todo.yaml
-      title: API Spec
-      icon: code
-  annotations:
-    backstage.io/techdocs-ref: dir:.
-spec:
-  type: openapi
+spec: 
+  ? "/todo/{id}"
+  : 
+    delete: 
+      description: "Delete the task"
+      parameters: 
+        - 
+          description: "task id that needs to be deleted"
+          in: path
+          name: id
+          required: true
+          type: string
+      produces: 
+        - application/json
+      responses: 
+        ? "200"
+        : 
+          description: "successful operation"
+          schema: 
+            items: 
+              $ref: "#/definitions/todosResponse"
+            type: array
+        ? "400"
+        : 
+          description: "Invalid status value"
+          schema: 
+            $ref: "#/definitions/InvalidResponse"
+      summary: "Delete the task"
+  /todos: 
+    /todo: ~
+    get: 
+      description: "Get all the tasks"
+      parameters: []
+      produces: 
+        - application/json
+      responses: 
+        ? "200"
+        : 
+          description: "successful operation"
+          schema: 
+            items: 
+              $ref: "#/definitions/todosResponse"
+            type: array
+        ? "400"
+        : 
+          description: "Invalid status value"
+          schema: 
+            $ref: "#/definitions/InvalidResponse"
+      summary: "Get all the tasks"
+    post: 
+      consumes: 
+        - application/json
+      description: "Save the task"
+      parameters: 
+        - 
+          description: "task object"
+          in: body
+          name: body
+          required: true
+          schema: 
+            properties: 
+              task: 
+                $ref: "#/definitions/Task"
+                type: object
+            type: object
+      produces: 
+        - application/json
+      responses: 
+        ? "200"
+        : 
+          description: "successful operation"
+          schema: 
+            items: 
+              $ref: "#/definitions/todosResponse"
+            type: array
+        ? "400"
+        : 
+          description: "Invalid status value"
+          schema: 
+            $ref: "#/definitions/InvalidResponse"
+      summary: "Save the task"
+  ? "/todos/{id}"
+  : 
+    put: 
+      description: "Update the tasks"
+      parameters: 
+        - 
+          description: "task id that needs to be deleted"
+          in: path
+          name: id
+          required: true
+          type: string
+        - 
+          description: "task object"
+          in: body
+          name: body
+          required: true
+          schema: 
+            properties: 
+              task: 
+                $ref: "#/definitions/Task"
+                type: object
+            type: object
+      produces: 
+        - application/json
+      responses: 
+        ? "200"
+        : 
+          description: "successful operation"
+          schema: 
+            items: 
+              $ref: "#/definitions/todosResponse"
+            type: array
+        ? "400"
+        : 
+          description: "Invalid status value"
+          schema: 
+            $ref: "#/definitions/InvalidResponse"
+      summary: "Update the tasks"
+  definition: |
+      openapi: 3.0.1
+      info:
+        title: WebAPI
+        version: '1.0'
+      servers:
+        - url: http://localhost:3080
+      paths:
   lifecycle: experimental
   owner: ahemadpirzada
-  definition: |
-    openapi: 3.0.1
-    info:
-      title: WebAPI
-      version: '1.0'
-    servers:
-      - url: http://localhost:3080
-    paths:
-  "/todos":
-    get:
-      summary: Get all the tasks
-      description: Get all the tasks
-      produces:
-      - application/json
-      parameters: []
-      responses:
-        '200':
-          description: successful operation
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/todosResponse"
-        '400':
-          description: Invalid status value
-          schema:
-            "$ref": "#/definitions/InvalidResponse"
-  
+  type: openapi
