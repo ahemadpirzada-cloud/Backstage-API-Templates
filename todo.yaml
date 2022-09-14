@@ -27,7 +27,7 @@ spec:
     servers:
       - url: http://localhost:8080
     paths:
-      /api/books:
+      /books:
         get:
           tags:
             - books
@@ -51,7 +51,7 @@ spec:
           responses:
             '200':
               description: Success
-      /api/books:
+      /books:
         get:
           tags:
             - books
