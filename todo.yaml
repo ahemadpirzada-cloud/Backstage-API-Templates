@@ -28,7 +28,7 @@ spec:
       - url: http://localhost:8080
     basePath: /api
     paths:
-      /books:
+      /api/books:
         get:
           tags:
             - book
@@ -52,7 +52,7 @@ spec:
           responses:
             '200':
               description: Success
-      '/books/{id}':
+      '/api/books/{id}':
         get:
           tags:
             - Book
