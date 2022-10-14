@@ -19,7 +19,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: ahemadpirzada
+  owner: ahemadpirzada1
   definition: |
     openapi: 3.0.1
     info:
