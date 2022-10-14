@@ -6,6 +6,7 @@ metadata:
   tags:
     - book
     - node-js-api
+    - demo
   links:
     - url: https://github.com/ahemadpirzada-cloud/Backstage-API-Templates
       title: GitHub Repo
