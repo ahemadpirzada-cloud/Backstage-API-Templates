@@ -74,6 +74,8 @@ spec:
               description: Success
       '/todoitems/{id}':
         get:
+          summary: Returns a list of users.
+          description: Optional extended description in CommonMark or HTML.
           tags:
             - Todo
           parameters:
