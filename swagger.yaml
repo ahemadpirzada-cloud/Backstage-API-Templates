@@ -75,13 +75,13 @@ spec:
       '/todoitems/{id}':
         get:
           summary: Returns a list of users.
-          description: Optional extended description in CommonMark or HTML.
           tags:
             - Todo
           parameters:
             - name: id
               in: path
               required: true
+              description: Parameter description in CommonMark or HTML.
               schema:
                 type: integer
                 format: int32
