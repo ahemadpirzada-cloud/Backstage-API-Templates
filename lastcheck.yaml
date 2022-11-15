@@ -47,7 +47,6 @@ spec:
             responses:
               '200':
                 description: Success
-        /todoitems:
           post:
             requestBody:
               required: true
