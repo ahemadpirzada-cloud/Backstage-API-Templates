@@ -48,44 +48,29 @@ spec:
           responses:
             '200':
               description: Success
-        "/todoitems": {
-            "post": {
-                "tags": [
-                    "Product Add To Wishlist"
-                ],
-                "summary": "Add product to user wishlist",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "id": "integer"
-                                    },
-                                    "name": {
-                                        "name": "string"
-                                    },
-                                    "isComplete": {
-                                        "isComplete": "boolean"
-                                    }
-                                }, "required": [
-                                    "id",
-                                    "name",
-                                    "isComplete"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    }
-                }
-            }
-        }
+        paths:
+      /todoitems:
+        post:
+          requestBody:
+            required: true
+            content:
+              application/x-www-form-urlencoded:
+                schema:
+                  type: object
+                  properties:
+                    name:         
+                      type: string
+                    id:
+                      type: integer
+                    isComplete:
+                      type: boolean
+                  required:
+                    - name
+                    - id
+                    - isComplete
+          responses:
+            '200':
+              description: OK
       /todoitems/complete:
         get:
           tags:
