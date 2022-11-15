@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: poc-server-api-v5
-  description: The todos API 34
+  name: swagger
+  description: The todos API21
   tags:
     - todo
     - dot-net-core-web-api
@@ -18,7 +18,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: makkaji
+  owner: ahemad
   definition: |
     openapi: 3.0.2
     info:
