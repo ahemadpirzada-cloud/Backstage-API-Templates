@@ -1,0 +1,139 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: swagger
+  description: The todos API21
+  tags:
+    - todo
+    - dot-net-core-web-api
+  links:
+    - url: https://github.com/masagaribhai/Backstage-API-Templates
+      title: GitHub Repo
+      icon: github
+    - url: https://github.com/masagaribhai/Backstage-API-Templates/blob/main/todo.yaml
+      title: API Spec
+      icon: code
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: ahemad
+  definition: |
+    openapi: 3.0.2
+    info:
+      title: WebAPI
+      description: This is the sample web api
+      x-app-prefix: xyz
+      x-bitbucket-repourl: http://www.deloitte.com
+      x-buildplaykey: test
+      version: 'Core'
+      contact:
+           name: Dummy
+           email: xyz@xyz.com
+           url: http://www.deloitte.com
+      x-apmnumber: 123
+      x-vanguard-service-type: Core
+      x-vanguard-product-family: Tech Support
+      x-slo-urls: 
+           - https://www.deloitte.com
+           - https://www.vanguard.com
+    servers:
+      - url: https://webapi20220913163904.azurewebsites.net/
+    paths:
+      /todoitems:
+        get:
+          tags:
+            - Todo 
+          responses:
+            '200':
+              description: Success
+        post:
+          tags:
+            - Todo
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+              text/json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+              application/*+json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+          responses:
+            '200':
+              description: Success
+      /todoitems/complete:
+        get:
+          tags:
+            - Todo
+          responses:
+            '200':
+              description: Success
+      '/todoitems/{id}':
+        get:
+          tags:
+            - Todo
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            '200':
+              description: Success
+        put:
+          tags:
+            - Todo
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+              text/json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+              application/*+json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+          responses:
+            '200':
+              description: Success
+        delete:
+          tags:
+            - Todo
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            '200':
+              description: Success
+    components:
+      schemas:
+        Todo:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+              nullable: true
+            isComplete:
+              type: boolean
+          additionalProperties: false
