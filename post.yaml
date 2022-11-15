@@ -48,20 +48,44 @@ spec:
           responses:
             '200':
               description: Success
-        post:
-          tags:
-            - Todo
-          requestBody:
-            content:
-              application/x-www-form-urlencoded:
-                schema:
-                  type: object
-                  properties:
-                    name:
-                      type:string
-          responses:
-            '200':
-              description: Success
+        "/addToWishlist": {
+            "post": {
+                "tags": [
+                    "Product Add To Wishlist"
+                ],
+                "summary": "Add product to user wishlist",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "token": {
+                                        "token": "string"
+                                    },
+                                    "id": {
+                                        "id": "string"
+                                    },
+                                    "product_variant_id": {
+                                        "product_variant_id": "string"
+                                    }
+                                }, "required": [
+                                    "token",
+                                    "id",
+                                    "product_variant_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
       /todoitems/complete:
         get:
           tags:
