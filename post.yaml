@@ -48,7 +48,7 @@ spec:
           responses:
             '200':
               description: Success
-        "/addToWishlist": {
+        "/todoitems": {
             "post": {
                 "tags": [
                     "Product Add To Wishlist"
