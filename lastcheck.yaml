@@ -48,7 +48,6 @@ spec:
           responses:
             '200':
               description: Success
-        paths:
       /todoitems:
         post:
           requestBody:
