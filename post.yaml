@@ -52,7 +52,6 @@ spec:
           tags:
             - Todo
           requestBody:
-            required:true
             content:
               application/x-www-form-urlencoded:
                 schema:
@@ -60,9 +59,6 @@ spec:
                   properties:
                     name:
                       type:string
-                  required:
-                    - name
-                    - email
           responses:
             '200':
               description: Success
