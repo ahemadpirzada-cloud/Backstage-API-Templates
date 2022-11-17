@@ -44,7 +44,7 @@ spec:
       /todoitems:
         get:
           tags:
-            - Todo 
+            - Fund Analysis 
           responses:
             '200':
               description: Success
