@@ -1,6 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
-metadata: 
+metadata:
+  name: post
+  description: The post
   annotations: 
     backstage.io/techdocs-ref: "dir:."
   description: "The encoded"
