@@ -65,13 +65,6 @@ spec:
           responses:
             '200':
               description: Success
-      /todoitems/complete:
-        get:
-          tags:
-            - Todo
-          responses:
-            '200':
-              description: Success
       '/todoitems/{id}':
         get:
           tags:
