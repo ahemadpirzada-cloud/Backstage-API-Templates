@@ -55,13 +55,13 @@ spec:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
               text/json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
               application/*+json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
           responses:
             '200':
               description: Success
@@ -93,13 +93,13 @@ spec:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
               text/json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
               application/*+json:
                 schema:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: '#/components/schemas/Schemas'
           responses:
             '200':
               description: Success
@@ -118,15 +118,15 @@ spec:
               description: Success
     components:
       securitySchemes:
-        oAuthSample: 
-        type: oauth2
-        description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
-        flows:
-         clientCredentials:
-         authorizationUrl: https://api.example.com/oauth2/authorize
-         scopes:
-            read_pets: read your pets
-            write_pets: modify pets in your account
+        oAuthSample:
+           type: oauth2
+           description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
+           flows:
+            clientCredentials:
+              authorizationUrl: https://api.example.com/oauth2/authorize
+              scopes:
+                read_pets: read your pets
+                write_pets: modify pets in your account
       schemas:
         Schemas:
           type: object
