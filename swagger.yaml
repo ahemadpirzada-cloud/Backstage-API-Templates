@@ -121,7 +121,7 @@ spec:
               description: Success
     components:
       schemas:
-        Todo:
+        Schemas:
           type: object
           properties:
             id:
