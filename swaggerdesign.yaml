@@ -22,10 +22,16 @@ spec:
   definition: |
     openapi: 3.0.2
     info:
+      title: WebAPI
+      description: This is the sample web api
       x-app-prefix: xyz
       x-bitbucket-repourl: http://www.deloitte.com
       x-buildplaykey: test
       version: 'Core'
+      contact:
+           name: Dummy
+           email: xyz@xyz.com
+           url: http://www.deloitte.com
       x-apmnumber: 123
       x-vanguard-service-type: Core
       x-vanguard-product-family: Tech Support
@@ -38,7 +44,7 @@ spec:
       /todoitems:
         get:
           tags:
-            - Fund Analysis 
+            - Fund Analytics
           responses:
             '200':
               description: Success
@@ -62,20 +68,18 @@ spec:
       /todoitems/complete:
         get:
           tags:
-            - Fund Benchmark Analytics
+            - Todo
           responses:
             '200':
               description: Success
       '/todoitems/{id}':
         get:
-          summary: Returns a list of users.
           tags:
-            - Fund benchmark Volatility
+            - Fund Benchmark Analytics
           parameters:
             - name: id
               in: path
               required: true
-              description: Parameter description in CommonMark or HTML.
               schema:
                 type: integer
                 format: int32
@@ -84,7 +88,7 @@ spec:
               description: Success
         put:
           tags:
-            - Advisor Analytics
+            - Fund Benchmark Volatility
           parameters:
             - name: id
               in: path
@@ -108,7 +112,7 @@ spec:
               description: Success
         delete:
           tags:
-            - Policy Analytics
+            - Advisor Analytics
           parameters:
             - name: id
               in: path
