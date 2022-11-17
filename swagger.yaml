@@ -38,13 +38,13 @@ spec:
       /todoitems:
         get:
           tags:
-            - Todo 
+            - Fund Analysis 
           responses:
             '200':
               description: Success
         post:
           tags:
-            - Todo
+            - Fund Volatility
           requestBody:
             content:
               application/json:
@@ -62,7 +62,7 @@ spec:
       /todoitems/complete:
         get:
           tags:
-            - Todo
+            - Fund Benchmark Analytics
           responses:
             '200':
               description: Success
@@ -70,7 +70,7 @@ spec:
         get:
           summary: Returns a list of users.
           tags:
-            - Todo
+            - Fund benchmark Volatility
           parameters:
             - name: id
               in: path
@@ -84,7 +84,7 @@ spec:
               description: Success
         put:
           tags:
-            - Todo
+            - Advisor Analytics
           parameters:
             - name: id
               in: path
@@ -108,7 +108,7 @@ spec:
               description: Success
         delete:
           tags:
-            - Todo
+            - Policy Analytics
           parameters:
             - name: id
               in: path
