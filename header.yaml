@@ -148,7 +148,7 @@ spec:
               description: Success
     components:
       schemas:
-        Fund Analysis:
+        FundAnalysis:
           type: object
           properties:
             id:
