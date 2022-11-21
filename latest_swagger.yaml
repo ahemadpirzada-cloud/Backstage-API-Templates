@@ -45,8 +45,8 @@ spec:
       /todoitems:
         get:
           tags:
-              - Fund Analytics
-          summary:Retrive fund analytics for all fund
+             - Fund Analytics
+          summary: Retrive fund analytics for all fund
           responses:
             '200':
               description: Success
