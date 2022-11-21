@@ -46,7 +46,7 @@ spec:
         get:
           tags:
              - Fund Analytics
-          summary: - Retrive fund analytics for all fund
+          summary:  -Retrive fund analytics for all fund
           description: >
             Retrivng data from fund analytics for given fund for all fund
             A detailed description is mentioned here
