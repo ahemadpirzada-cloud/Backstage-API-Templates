@@ -11,7 +11,7 @@ metadata:
     - icon: code
       title: API Spec
       url: https://github.com/masagaribhai/Backstage-API-Templates/blob/main/todo.yaml
-  name: patch yaml
+  name: patchyaml
   tags:
     - todo
     - dot-net-core-web-api
