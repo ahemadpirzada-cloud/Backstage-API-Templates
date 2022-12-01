@@ -1,177 +1,176 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
-metadata: 
-  annotations: 
-    backstage.io/techdocs-ref: "dir:."
-  description: "The todos API21"
-  links: 
-    - 
-      icon: github
-      title: "GitHub Repo"
-      url: "https://github.com/masagaribhai/Backstage-API-Templates"
-    - 
-      icon: code
-      title: "API Spec"
-      url: "https://github.com/masagaribhai/Backstage-API-Templates/blob/main/todo.yaml"
+metadata:
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  description: The todos API21
+  links:
+    - icon: github
+      title: GitHub Repo
+      url: https://github.com/masagaribhai/Backstage-API-Templates
+    - icon: code
+      title: API Spec
+      url: https://github.com/masagaribhai/Backstage-API-Templates/blob/main/todo.yaml
   name: patch yaml
-  tags: 
+  tags:
     - todo
     - dot-net-core-web-api
-spec: 
-  definition: |-
-      openapi: 3.0.2
-      info:
-        title: WebAPI
-        description: This is the sample web api
-        x-app-prefix: xyz
-        x-bitbucket-repourl: http://www.deloitte.com
-        x-buildplaykey: test
-        version: 'Core'
-        contact:
-             name: Dummy
-             email: xyz@xyz.com
-             url: http://www.deloitte.com
-        x-apmnumber: 123
-        x-vanguard-service-type: Core
-        x-vanguard-product-family: Tech Support
-        x-slo-urls: 
-             - https://www.deloitte.com
-             - https://www.vanguard.com
-      servers:
-        - url: https://webapi20220913163904.azurewebsites.net/
-          title: Choose Servers
-      paths:
-        /todoitems:
-          get:
-            tags:
-               - Fund Analytics
-            summary: Retrive fund analytics for all fund
-            description: >
-              Retrivng data from fund analytics for given fund for all fund
-              A detailed description is mentioned here
-            responses:
-              '200':
-                description: Success
-          post:
-            tags:
-              - Fund Volatility
-            requestBody:
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                text/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                application/*+json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-            responses:
-              '200':
-                description: Success
-        '/todoitems/{id}':
-          get:
-            tags:
-              - Fund Benchmark Analytics
-            summary: Retrive fund analytics for all fund
-            description: >
-              Retrivng data from fund analytics for given fund for all fund. 
-              A detailed description is mentioned here
-            parameters:
-              - name: id
-                in: path
-                required: true
+spec:
+  definition: >-
+    openapi: 3.0.2
+
+    info:
+      title: WebAPI
+      description: This is the sample web api
+      x-app-prefix: xyz
+      x-bitbucket-repourl: http://www.deloitte.com
+      x-buildplaykey: test
+      version: 'Core'
+      contact:
+           name: Dummy
+           email: xyz@xyz.com
+           url: http://www.deloitte.com
+      x-apmnumber: 123
+      x-vanguard-service-type: Core
+      x-vanguard-product-family: Tech Support
+      x-slo-urls: 
+           - https://www.deloitte.com
+           - https://www.vanguard.com
+    servers:
+      - url: https://webapi20220913163904.azurewebsites.net/
+        title: Choose Servers
+    paths:
+      /todoitems:
+        get:
+          tags:
+             - Fund Analytics
+          summary: Retrive fund analytics for all fund
+          description: >
+            Retrivng data from fund analytics for given fund for all fund
+            A detailed description is mentioned here
+          responses:
+            '200':
+              description: Success
+        post:
+          tags:
+            - Fund Volatility
+          requestBody:
+            content:
+              application/json:
                 schema:
-                  type: integer
-                  format: int32
-            responses:
-              '200':
-                description: Success
-          put:
-            tags:
-              - Fund Benchmark Volatility
-            parameters:
-              - name: id
-                in: path
-                required: true
+                  $ref: '#/components/schemas/Schemas'
+              text/json:
                 schema:
-                  type: integer
-                  format: int32
-            requestBody:
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                text/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                application/*+json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-            responses:
-              '200':
-                description: Success
-          patch:
-            tags:
-              - Fund Benchmark Patch
-            parameters:
-              - name: id
-                in: path
-                required: true
+                  $ref: '#/components/schemas/Schemas'
+              application/*+json:
                 schema:
-                  type: integer
-                  format: int32
-            requestBody:
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                text/json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-                application/*+json:
-                  schema:
-                    $ref: '#/components/schemas/Schemas'
-            responses:
-              '200':
-                description: Success
-          delete:
-            tags:
-              - Advisor Analytics
-            parameters:
-              - name: id
-                in: path
-                required: true
-                schema:
-                  type: integer
-                  format: int32
-            responses:
-              '200':
-                description: Success
-      components:
-        securitySchemes:
-          oAuthSample:
-             type: oauth2
-             description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
-             flows:
-              clientCredentials:
-                authorizationUrl: https://api.example.com/oauth2/authorize
-                scopes:
-                  read_pets: read your pets
-                  write_pets: modify pets in your account
-        schemas:
-          Schemas:
-            type: object
-            properties:
-              id:
+                  $ref: '#/components/schemas/Schemas'
+          responses:
+            '200':
+              description: Success
+      '/todoitems/{id}':
+        get:
+          tags:
+            - Fund Benchmark Analytics
+          summary: Retrive fund analytics for all fund
+          description: >
+            Retrivng data from fund analytics for given fund for all fund. 
+            A detailed description is mentioned here
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
                 type: integer
                 format: int32
-              name:
-                type: string
-                nullable: true
-              isComplete:
-                type: boolean
-            additionalProperties: false
+          responses:
+            '200':
+              description: Success
+        put:
+          tags:
+            - Fund Benchmark Volatility
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+              text/json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+              application/*+json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+          responses:
+            '200':
+              description: Success
+        patch:
+          tags:
+            - Fund Benchmark Patch
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+              text/json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+              application/*+json:
+                schema:
+                  $ref: '#/components/schemas/Schemas'
+          responses:
+            '200':
+              description: Success
+        delete:
+          tags:
+            - Advisor Analytics
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            '200':
+              description: Success
+    components:
+      securitySchemes:
+        oAuthSample:
+           type: oauth2
+           description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
+           flows:
+            clientCredentials:
+              authorizationUrl: https://api.example.com/oauth2/authorize
+              scopes:
+                read_pets: read your pets
+                write_pets: modify pets in your account
+      schemas:
+        Schemas:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+              nullable: true
+            isComplete:
+              type: boolean
+          additionalProperties: false
   lifecycle: experimental
   owner: ahemad
   type: openapi
