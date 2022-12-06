@@ -18,7 +18,6 @@ metadata:
 spec:
   definition: >-
     openapi: 3.0.2
-
     info:
       title: WebAPI
       description: This is the sample web api
